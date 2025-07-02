@@ -15,7 +15,7 @@ namespace DeveloperSample.Syncing
             Assert.Equal(items.Count, result.Count);
         }
 
-        [Fact(Skip="Not implemented")]
+        [Fact]
         public void ItemsOnlyInitializeOnce()
         {
             var debug = new SyncDebug();
@@ -27,8 +27,9 @@ namespace DeveloperSample.Syncing
                 return i.ToString();
             });
 
-            Assert.Equal(100, count);
+            Assert.Equal(100, count);         // ✅ Ensure exactly 100 executions
             Assert.Equal(100, dictionary.Count);
         }
+
     }
 }
